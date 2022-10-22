@@ -16,6 +16,3 @@ Very useful if you have many console windows.
 ### Installation
 Not required.
 Just put 'Tiler.exe' and 'Tiler.ini' together.
-
-### Licence
-Freeware
