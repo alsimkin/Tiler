@@ -5,7 +5,7 @@ Very useful if you have many console windows.
 ![TilerWindow](img/tiler.jpg)
 
 ### Features
-* Search windows by part of their title
+* Search for windows by part of their title
 * Tile selected windows by pattern
 * Hide selected windows
 * Close selected windows
