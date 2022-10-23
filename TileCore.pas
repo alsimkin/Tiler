@@ -14,7 +14,7 @@ type
 
   TWinsData = array of TWinData;
 
-// Search for windows of aWinClass with substring of window title aWinTitle
+// Search for windows by substrings of Window Class and Window Title
 // aHandle - handler of caller window or 0. If aHandle=0 caller window can be in search results
 // Retrieves an array of found windows
 function SearchWin(aHandle: HWnd; const aWinClass, aWinTitle: string): TWinsData;
@@ -28,7 +28,7 @@ procedure CloseWin(const A: TWinsData);
 // Tiles windows of array A on working area of display R (WorkAreaRect)
 // aHandle - handler of caller window or 0. If aHandle=0 caller window focus won't be returned back
 // aCols - wanted amount of columns; aRows - wanted amount of rows
-// aMode - tiling pattern. true - rows first, false - columns first
+// aMode - tiling mode. true - rows first, false - columns first
 procedure TileWin(aHandle: HWnd; R: TRect; aCols, aRows: integer; const A: TWinsData; aMode: boolean = true);
 
 implementation
@@ -36,7 +36,8 @@ implementation
 uses
   Winapi.Messages, System.SysUtils, System.Math;
 
-var                          // Variables for EnumProc
+// Variables for EnumProc
+var
   WinArray: TWinsData;
   WinData: TWinData;
   WinTitleStr: string;
