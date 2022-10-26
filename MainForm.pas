@@ -184,13 +184,7 @@ procedure TForm1.CloseWnd;
 begin
   if ListBox1.SelCount > 0 then
     if MessageDlgC(Form1, 'Close selected windows ?', mtConfirmation, [mbYes, mbNo], mbYes) = mrYes then
-    begin
       CloseWin(GetSelectedWnd);
-    // Some time for closing windows
-      Sleep(500);
-    // Search windows and update ListBox1
-      SearchWnd;
-    end;
 end;
 
 function TForm1.GetSelectedWnd: TWinsData;
@@ -224,6 +218,8 @@ end;
 procedure TForm1.Button4Click(Sender: TObject);
 begin
   CloseWnd;
+  Sleep(500); // Some time for close windows
+  SearchWnd;
   if (ListBox1.Count > 0) and TileAfterClose then
     TileWnd;
 end;
@@ -247,4 +243,3 @@ begin
 end;
 
 end.
-
